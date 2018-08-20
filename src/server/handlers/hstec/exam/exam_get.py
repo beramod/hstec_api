@@ -1,4 +1,4 @@
-from .....framework.handler import Handler
+from src.framework.handler import Handler
 
 
 class ExamGetHandler(Handler):
