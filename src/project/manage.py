@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 
-from src.project.daemon import Daemon
+from .daemon import Daemon
 
 
 # ===================================================================================================

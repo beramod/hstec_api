@@ -1,8 +1,8 @@
 from django.views.generic import View
-from src.framework.context import Context
-from src.framework.interpreter import Interpreter
-from src.framework.handler import Handler
-from src.framework.router import urls
+from .context import Context
+from .interpreter import Interpreter
+from .handler import Handler
+from .router import urls
 
 
 class Operator(View):
