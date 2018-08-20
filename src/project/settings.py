@@ -1,13 +1,9 @@
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 
 print("BASE_DIR: ", BASE_DIR)
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '*6ft=$4j5+*rtdb+o0r27rqdxni920fhnh_e!)77z!(mh_v+7k'
@@ -16,7 +12,6 @@ SECRET_KEY = '*6ft=$4j5+*rtdb+o0r27rqdxni920fhnh_e!)77z!(mh_v+7k'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -27,7 +22,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'src.core',
+    'src.project',
     'corsheaders'
 )
 
@@ -43,13 +38,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-
-ROOT_URLCONF = 'src.core.urls'
+ROOT_URLCONF = 'src.project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "src/core")],
+        'DIRS': [os.path.join(BASE_DIR, "src/project")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,22 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.core.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
+WSGI_APPLICATION = 'src.project.wsgi.application'
 
 LANGUAGE_CODE = 'ko-kr'
 
@@ -89,9 +68,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
 PROJECT_DIR = os.path.join(BASE_DIR, "src/")
 
 STATIC_URL = '/static/'
@@ -107,7 +83,6 @@ HOST = str(os.environ.get('HOST'))
 print("HOST: ", HOST)
 
 # django-cors-headers
-
 CORS_ORIGIN_WHITELIST = (
     'localhost:12000',
     'localhost:13000',

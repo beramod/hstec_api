@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 
-from src.core.daemon import Daemon
+from src.project.daemon import Daemon
 
 
 # ===================================================================================================
@@ -23,7 +23,7 @@ class ManageDaemon(Daemon):
         with open(self.PID_PATH, 'w') as pidFile:
             pidFile.write("{}".format(os.getpid()))
         # run django
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.core.settings")
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.project.settings")
         from django.core.management import execute_from_command_line
         execute_from_command_line(sys.argv)
 
