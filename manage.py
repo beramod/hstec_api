@@ -10,7 +10,7 @@ from src.project.daemon import Daemon
 # ===================================================================================================
 class ManageDaemon(Daemon):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
     PID_PATH = os.path.join(BASE_DIR, "var/pid/hstec.pid")
     LOG_PATH = os.path.join(BASE_DIR, "var/logs/hstec.log")
 
